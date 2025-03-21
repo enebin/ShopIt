@@ -6,8 +6,12 @@
 //
 
 import SwiftUI
+import ShopIt
 
 struct ContentView: View {
+    @Environment(\.openURL) var openURL
+    @Environment(\.redirector) var redirector
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +20,10 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .task {
+            redirector.register(openURL)
+            try? await redirector.redirect(keyword: "test", to: .googleSearch)
+        }
     }
 }
 

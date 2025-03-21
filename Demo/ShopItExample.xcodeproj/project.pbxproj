@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1C9073022D8DA0A10061A176 /* ShopIt in Frameworks */ = {isa = PBXBuildFile; productRef = 1C9073012D8DA0A10061A176 /* ShopIt */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		1C5C0A642D8D9CDA00854900 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,6 +31,7 @@
 		1C5C0A532D8D9CD800854900 /* ShopItExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShopItExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5C0A632D8D9CDA00854900 /* ShopItExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopItExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C5C0A6D2D8D9CDA00854900 /* ShopItExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopItExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C9073002D8DA08F0061A176 /* ShopIt */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ShopIt; path = ..; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -52,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C9073022D8DA0A10061A176 /* ShopIt in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,7 @@
 				1C5C0A552D8D9CD800854900 /* ShopItExample */,
 				1C5C0A662D8D9CDA00854900 /* ShopItExampleTests */,
 				1C5C0A702D8D9CDA00854900 /* ShopItExampleUITests */,
+				1C9072FF2D8DA08F0061A176 /* Frameworks */,
 				1C5C0A542D8D9CD800854900 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -90,6 +97,14 @@
 				1C5C0A6D2D8D9CDA00854900 /* ShopItExampleUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1C9072FF2D8DA08F0061A176 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1C9073002D8DA08F0061A176 /* ShopIt */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -112,6 +127,7 @@
 			);
 			name = ShopItExample;
 			packageProductDependencies = (
+				1C9073012D8DA0A10061A176 /* ShopIt */,
 			);
 			productName = ShopItExample;
 			productReference = 1C5C0A532D8D9CD800854900 /* ShopItExample.app */;
@@ -195,6 +211,8 @@
 			);
 			mainGroup = 1C5C0A4A2D8D9CD800854900;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 1C5C0A542D8D9CD800854900 /* Products */;
 			projectDirPath = "";
@@ -558,6 +576,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1C9073012D8DA0A10061A176 /* ShopIt */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ShopIt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1C5C0A4B2D8D9CD800854900 /* Project object */;
 }
