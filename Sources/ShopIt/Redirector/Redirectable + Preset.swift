@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - Google
+// MARK: - Google Search
 public extension Redirectable where Self == GoogleRedirection {
     static var googleSearch: Self {
         GoogleRedirection()
