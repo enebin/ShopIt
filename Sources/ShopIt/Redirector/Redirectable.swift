@@ -20,4 +20,4 @@ public protocol WebRedirectable {
 }
 
 /// A type that can redirect to either a scheme URL or a web URL.
-public typealias Redirectable = SchemeRedirectable & WebRedirectable
+public protocol Redirectable: SchemeRedirectable & WebRedirectable {}
