@@ -8,6 +8,9 @@
 import SwiftUI
 
 public final class Redirector {
+    /// Shared singleton instance of `Redirector`.
+    /// - Note: When using Redirector in a SwiftUI environment, consider using `@Environment(\.redirector)`
+    ///     instead of directly referencing this shared instance.
     static public let shared = Redirector()
     
     private var openUrlAction: OpenURLAction?
@@ -23,7 +26,7 @@ public final class Redirector {
     
     // MARK: - Registering
     /// Registers a URL opener action.
-    public func register(opener: OpenURLAction) {
+    public func register(_ opener: OpenURLAction) {
         openUrlAction = opener
     }
     
