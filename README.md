@@ -24,7 +24,7 @@ RedirectButton(
 - **Customizable buttons** for flexible and straightforward redirection.
 
 ## Quick link
-- Demo app & usage example can be found in [here]()
+- Demo app & usage example can be found in [here](https://github.com/enebin/ShopIt/tree/main/Demo)
 
 ## Installation
 
@@ -133,7 +133,7 @@ Button("Buy This!") {
 > If you want to add your own redirection to this package, feel free to submit a PR. Your contributions are always welcome!
 
 ## Example
-You can explore the complete usage flow in our [demo app]().
+You can explore the complete usage flow in our [demo app](https://github.com/enebin/ShopIt/tree/main/Demo).
 
 ## Supported Platforms
 
