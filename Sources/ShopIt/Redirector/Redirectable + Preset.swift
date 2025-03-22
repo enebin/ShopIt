@@ -1,5 +1,5 @@
 //
-//  GoogleRedirectable.swift
+//  Redirectable + Preset.swift
 //  ShopIt
 //
 //  Created by Kai Lee on 3/21/25.

@@ -7,12 +7,12 @@
 
 import SwiftUI
 private struct RedirectorKey: EnvironmentKey {
-    static let defaultValue: Redirector = Redirector.shared
+    static let defaultValue: ShopitRedirector = ShopitRedirector.shared
 }
 
 public extension EnvironmentValues {
-    /// Environment value to access `Redirector` in SwiftUI view.
-    var redirector: Redirector {
+    /// Environment value to access `ShopitRedirector` in SwiftUI view.
+    var shopitRedirector: ShopitRedirector {
         get { self[RedirectorKey.self] }
         set { self[RedirectorKey.self] = newValue }
     }

@@ -10,12 +10,12 @@ import Testing
 import SwiftUI
 
 @Suite(.serialized) class RedirectorTests {
-    let redirector: Redirector
+    let redirector: ShopitRedirector
     let mockBothRedirection: MockBothRedirection
     let mockWebRedirection: MockWebRedirection
 
     init() {
-        self.redirector = Redirector.shared
+        self.redirector = ShopitRedirector.shared
         self.mockBothRedirection = MockBothRedirection()
         self.mockWebRedirection = MockWebRedirection()
     }

@@ -10,7 +10,7 @@ import ShopIt
 
 struct ContentView: View {
     @Environment(\.openURL) var openURL
-    @Environment(\.redirector) var redirector
+    @Environment(\.shopitRedirector) var redirector
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct ContentView: View {
         .padding()
         .task {
             redirector.register(openURL)
-            try? await redirector.redirect(keyword: "test", to: .googleSearch)
+            try? await redirector.redirect(keyword: "Apple", to: .googleSearch)
         }
     }
 }

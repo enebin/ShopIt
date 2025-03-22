@@ -1,5 +1,5 @@
 //
-//  Redirector.swift
+//  ShopitRedirector.swift
 //  ShopIt
 //
 //  Created by Kai Lee on 3/21/25.
@@ -7,11 +7,11 @@
 
 import SwiftUI
 
-public final class Redirector {
-    /// Shared singleton instance of `Redirector`.
-    /// - Note: When using Redirector in a SwiftUI environment, consider using `@Environment(\.redirector)`
+public final class ShopitRedirector {
+    /// Shared singleton instance of `ShopitRedirector`.
+    /// - Note: When using ShopitRedirector in a SwiftUI environment, consider using `@Environment(\.redirector)`
     ///     instead of directly referencing this shared instance.
-    static public let shared = Redirector()
+    static public let shared = ShopitRedirector()
     
     private var openUrlAction: OpenURLAction?
     
@@ -71,14 +71,14 @@ public final class Redirector {
     ///
     /// - Note: The default value is `.scheme`
     @discardableResult
-    public func redirectPriority(_ priority: RedirectPriority) -> Redirector {
+    public func redirectPriority(_ priority: RedirectPriority) -> ShopitRedirector {
         redirectPriority = priority
         return self
     }
 }
 
 // MARK: - Private
-private extension Redirector {
+private extension ShopitRedirector {
     func openLink(using queryable: QueryableURL, keyword: String) async throws {
         guard let url = queryable.url(with: keyword) else {
             throw ShopItError.invalidURL

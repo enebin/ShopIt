@@ -5,7 +5,7 @@
 //  Created by Kai Lee on 3/21/25.
 //
 
-public extension Redirector {
+public extension ShopitRedirector {
     /// The priority of redirection.
     enum RedirectPriority {
         /// Redirect to scheme URL first, then web URL.
