@@ -13,7 +13,7 @@ public final class ShopitRedirector {
     ///     instead of directly referencing this shared instance.
     static public let shared = ShopitRedirector()
     
-    private var openUrlAction: OpenURLAction?
+    public private(set) var openUrlAction: OpenURLAction?
     
     /// The priority of redirection.
     ///
