@@ -1,3 +1,7 @@
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fenebin%2FShopIt%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/enebin/ShopIt)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fenebin%2FShopIt%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/enebin/ShopIt)
+[![Swift Package Manager compatible](https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg)](https://github.com/apple/swift-package-manager)
+
 ![Redirect with ShopIt](Assets/banner.png)
 
 <div align="center">
