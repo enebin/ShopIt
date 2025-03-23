@@ -51,19 +51,11 @@ public final class ShopitRedirector {
     /// First link to be opened is determined by the `redirectPriority` property.
     /// If the first link fails to open, the other link is attempted
     public func redirect(keyword: String, to redirection: some Redirectable) async throws {
-        if redirectPriority == .scheme {
-            do {
-                try await openLink(using: redirection.schemeUrl, keyword: keyword)
-            } catch {
-                try await openLink(using: redirection.webUrl, keyword: keyword)
-            }
-        } else {
-            do {
-                try await openLink(using: redirection.webUrl, keyword: keyword)
-            } catch {
-                try await openLink(using: redirection.schemeUrl, keyword: keyword)
-            }
-        }
+        let primary = redirectPriority == .scheme ? redirection.schemeUrl : redirection.webUrl
+        let fallback = redirectPriority == .scheme ? redirection.webUrl : redirection.schemeUrl
+        
+        do { try await openLink(using: primary, keyword: keyword) }
+        catch { try await openLink(using: fallback, keyword: keyword) }
     }
     
     // MARK: - Config
