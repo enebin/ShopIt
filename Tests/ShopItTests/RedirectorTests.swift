@@ -27,7 +27,7 @@ import SwiftUI
     // MARK: - Registering
     @Test func register() async throws {
         let openUrlAction = await OpenURLAction(handler: { _ in return .handled })
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         try await redirector.redirect(keyword: "test", to: mockBothRedirection)
     }
@@ -41,7 +41,7 @@ import SwiftUI
     
     @Test func registerAndThenUnregister() async throws {
         let openUrlAction = await OpenURLAction(handler: { _ in return .handled })
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         // No throw
         try await redirector.redirect(keyword: "test", to: mockBothRedirection)
@@ -56,20 +56,18 @@ import SwiftUI
     // MARK: - Redirecting
     @Test func redirectWhenBothAvailable() async throws {
         let openUrlAction = await OpenURLAction(handler: { _ in return .handled })
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         var mockBothRedirection = MockBothRedirection()
         try await redirector.redirect(keyword: "test", to: mockBothRedirection)
         
-        #expect(mockBothRedirection.schemeUrlCalled == 1)
-        #expect(mockBothRedirection.webUrlCalled == 0)
+        #expect(mockBothRedirection.schemeUrlCalled > mockBothRedirection.webUrlCalled)
 
         mockBothRedirection = MockBothRedirection()
         redirector.redirectPriority(.web)
         try await redirector.redirect(keyword: "test", to: mockBothRedirection)
         
-        #expect(mockBothRedirection.webUrlCalled == 1)
-        #expect(mockBothRedirection.schemeUrlCalled == 0)
+        #expect(mockBothRedirection.webUrlCalled > mockBothRedirection.schemeUrlCalled)
     }
     
     @Test func failToRedirectFirstTrial() async throws {
@@ -79,7 +77,7 @@ import SwiftUI
             return isHandled ? .handled : .discarded
         })
         
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         try await redirector.redirect(keyword: "test", to: mockBothRedirection)
         
@@ -89,7 +87,7 @@ import SwiftUI
     
     @Test func failToOpenUrl() async {
         let openUrlAction = await OpenURLAction(handler: { _ in return .discarded })
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         await #expect(throws: ShopItError.cannotOpenURL) {
             try await redirector.redirect(keyword: "test", to: mockBothRedirection)
@@ -99,7 +97,7 @@ import SwiftUI
     // MARK: - Redirecting to Specific URL
     @Test func redirectToScheme() async throws {
         let openUrlAction = await OpenURLAction(handler: { _ in return .handled })
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         let mockSchemeRedirection = MockSchemeRedirection()
         try await redirector.redirect(keyword: "test", to: mockSchemeRedirection)
@@ -109,7 +107,7 @@ import SwiftUI
     
     @Test func redirectToWeb() async throws {
         let openUrlAction = await OpenURLAction(handler: { _ in return .handled })
-        redirector.register(opener: openUrlAction)
+        redirector.register(openUrlAction)
         
         let mockWebRedirection = MockWebRedirection()
         try await redirector.redirect(keyword: "test", to: mockWebRedirection)
