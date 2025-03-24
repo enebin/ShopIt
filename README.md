@@ -35,7 +35,7 @@ RedirectButton(
 ### Swift Package Manager (SPM)
 Follow these steps to install **ShopIt** using SPM:
 
-1. From within Xcode 13 or later, choose `File` > `Swift Packages` > `Add Package Dependency`.
+1. From within Xcode 16 or later, choose `File` > `Swift Packages` > `Add Package Dependency`.
 2. At the next screen, enter the URL for the **ShopIt** repository in the search bar then click `Next`.
 ``` Text
 https://github.com/enebin/ShopIt.git
